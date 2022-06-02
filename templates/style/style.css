@@ -290,3 +290,22 @@ table tr td
 { background: #F0EFE2;
   color: #47433F;
   border-top: 1px solid #FFF;}
+
+fieldset {
+  width: 310px;
+  margin-top: 20px;
+  border: 1px solid #d6d6d6;
+  background-color: #FFFFFF;
+  line-height: 1.6em;
+}
+
+legend {
+  font-style: italic;
+  color: #000000;
+}
+
+.title {
+  float: left;
+  width: 160px;
+  clear: left;
+}
