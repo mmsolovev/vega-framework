@@ -6,8 +6,8 @@ class GetRequest:
         if data:
             params = data.split('&')
             for i in params:
-                k, v = i.split('=')
-                result[k] = v
+                key, value = i.split('=')
+                result[key] = value
         return result
 
     @staticmethod
@@ -25,8 +25,8 @@ class PostRequest:
         if data:
             params = data.split('&')
             for i in params:
-                k, v = i.split('=')
-                result[k] = v
+                key, value = i.split('=')
+                result[key] = value
         return result
 
     @staticmethod

@@ -18,3 +18,8 @@ class About:
         print(request)
         return '200 OK', render('about.html', date=request.get('date', None))
 
+
+class Registration:
+    def __call__(self, request):
+        print(request)
+        return '200 OK', render('registration.html', date=request.get('date', None))
