@@ -46,5 +46,5 @@ class PostRequest:
 
     def get_request_params(self, environ):
         data = self.get_wsgi_input_data(environ)
-        data = self.parse_input_data(data)
+        data = self.parse_wsgi_input_data(data)
         return data
