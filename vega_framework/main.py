@@ -3,9 +3,9 @@ from quopri import decodestring
 from vega_framework.requests import PostRequest, GetRequest
 
 
-def not_found_404_view(request):
-    print(request)
-    return '404 WHAT', [b'404 Not Found']
+class NotFound404:
+    def __call__(self, request):
+        return '404 WHAT', '404 Page Not Found'
 
 
 class Vega:
@@ -31,13 +31,13 @@ class Vega:
         if method == 'GET':
             request_params = GetRequest().get_request_params(environ)
             request['request_params'] = Vega.decode_value(request_params)
-            print(f'Пришели GET-параметры: {Vega.decode_value(request_params)}')
+            print(f'Пришли GET-параметры: {Vega.decode_value(request_params)}')
 
         # page controller
         if path in self.routes:
             view = self.routes[path]
         else:
-            view = not_found_404_view
+            view = NotFound404()
 
         # front controller
         for front in self.fronts:
