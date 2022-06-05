@@ -40,7 +40,6 @@ class PostRequest:
         result = {}
         if data:
             data_str = data.decode(encoding='utf-8')
-            print(data_str)
             result = self.parse_input_data(data_str)
         return result
 
